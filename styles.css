@@ -1,4 +1,489 @@
-/*
-  Add your CSS styles for the Cyberbrolly portfolio here.
-  This file is linked from index.html.
-*/
+:root {
+  --bg: #030712;
+  --bg-soft: #081426;
+  --line: rgba(0, 214, 255, 0.13);
+  --line-soft: rgba(0, 214, 255, 0.2);
+  --neon: #00f6ff;
+  --pink: #ff2a8c;
+  --purple: #9a5cff;
+  --text: #88a0bb;
+  --muted: #5b6f87;
+  --white: #f4f8ff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Segoe UI", "Roboto Condensed", sans-serif;
+  background:
+    radial-gradient(circle at 75% 14%, rgba(0, 246, 255, 0.12), transparent 36%),
+    radial-gradient(circle at 80% 38%, rgba(15, 255, 177, 0.06), transparent 40%),
+    var(--bg);
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+.site {
+  width: min(1180px, 100% - 2rem);
+  margin: 0 auto;
+  border-left: 1px solid rgba(0, 246, 255, 0.07);
+  border-right: 1px solid rgba(0, 246, 255, 0.07);
+  background:
+    repeating-linear-gradient(0deg, transparent 0 59px, var(--line) 59px 60px),
+    repeating-linear-gradient(90deg, transparent 0 59px, var(--line) 59px 60px);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  height: 58px;
+  border-bottom: 1px solid var(--line-soft);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.2rem;
+  background: rgba(3, 8, 20, 0.88);
+  backdrop-filter: blur(8px);
+}
+
+.brand {
+  color: var(--neon);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(0, 246, 255, 0.65);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2.2rem;
+}
+
+nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--neon);
+}
+
+section {
+  padding: 5.2rem 2.2rem 4rem;
+  min-height: calc(100vh - 58px);
+}
+
+.eyebrow {
+  color: var(--pink);
+  text-transform: uppercase;
+  letter-spacing: 0.34em;
+  font-size: 0.74rem;
+  margin-bottom: 1.2rem;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero .badge {
+  display: inline-block;
+  border: 1px solid rgba(0, 246, 255, 0.7);
+  color: var(--neon);
+  padding: 0.45rem 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.78rem;
+  margin-top: 0.4rem;
+  margin-bottom: 1.7rem;
+}
+
+h1,
+h2 {
+  line-height: 0.92;
+  letter-spacing: 0.01em;
+  margin-bottom: 1.6rem;
+  color: var(--white);
+  font-weight: 900;
+  font-size: clamp(3.1rem, 10vw, 6.2rem);
+}
+
+.title-cyan {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--neon);
+  text-shadow: 0 0 16px rgba(0, 246, 255, 0.35);
+  display: block;
+}
+
+.intro {
+  max-width: 680px;
+  font-size: 2rem;
+  line-height: 1.45;
+  margin-bottom: 2rem;
+  color: #7f92a8;
+}
+
+.intro strong {
+  color: var(--neon);
+  text-shadow: 0 0 9px rgba(0, 246, 255, 0.4);
+}
+
+.cta-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.23em;
+  font-size: 0.75rem;
+  padding: 1rem 1.65rem;
+  min-width: 180px;
+  text-align: center;
+  border: 1px solid rgba(0, 246, 255, 0.28);
+  color: #71839b;
+  background: rgba(1, 9, 20, 0.76);
+}
+
+.btn.primary {
+  color: var(--neon);
+  border-color: var(--neon);
+  box-shadow: inset 0 0 0 1px rgba(0, 246, 255, 0.25), 0 0 14px rgba(0, 246, 255, 0.15);
+}
+
+.divider {
+  border-top: 1px solid rgba(0, 246, 255, 0.13);
+  max-width: 540px;
+  margin-bottom: 1.5rem;
+}
+
+.stats {
+  display: flex;
+  gap: 3rem;
+  text-transform: uppercase;
+}
+
+.value {
+  color: var(--neon);
+  font-size: 2.6rem;
+  font-weight: 700;
+  text-shadow: 0 0 13px rgba(0, 246, 255, 0.34);
+}
+
+.label {
+  margin-top: 0.45rem;
+  color: #5a6b80;
+  font-size: 0.68rem;
+  letter-spacing: 0.24em;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.copy {
+  max-width: 650px;
+  font-size: 1.95rem;
+  line-height: 1.58;
+  color: #7a8ea7;
+}
+
+.copy p {
+  margin-bottom: 1rem;
+}
+
+.copy strong {
+  color: var(--neon);
+}
+
+.terminal {
+  border: 1px solid rgba(125, 185, 255, 0.18);
+  background: rgba(5, 14, 29, 0.65);
+  min-height: 460px;
+  padding: 1.2rem 1.3rem;
+  position: relative;
+  font-family: "Consolas", monospace;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #b8c9de;
+}
+
+.terminal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 26px;
+  height: 26px;
+  border-top: 1px solid rgba(125, 185, 255, 0.2);
+  border-right: 1px solid rgba(125, 185, 255, 0.2);
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+  background: rgba(125, 185, 255, 0.1);
+}
+
+.dots {
+  color: #ffbb33;
+  margin-right: 0.8rem;
+}
+
+.dots .pink {
+  color: #ff2a8c;
+}
+
+.dots .yellow {
+  color: #ffbe3d;
+}
+
+.dots .green {
+  color: #37f482;
+}
+
+.cmd {
+  color: var(--neon);
+  font-weight: 600;
+}
+
+.prompt {
+  color: var(--pink);
+  font-weight: 700;
+  margin-right: 0.4rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem;
+  margin-top: 1rem;
+}
+
+.card {
+  border: 1px solid rgba(112, 166, 222, 0.2);
+  background: rgba(6, 14, 30, 0.6);
+  padding: 1.6rem;
+  min-height: 300px;
+  position: relative;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 18px;
+  height: 18px;
+  border: 2px solid currentColor;
+  transform: rotate(45deg);
+  opacity: 0.55;
+}
+
+.tone-cyan {
+  color: var(--neon);
+}
+
+.tone-pink {
+  color: var(--pink);
+}
+
+.tone-purple {
+  color: var(--purple);
+}
+
+.card small {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.66rem;
+  margin-bottom: 0.9rem;
+}
+
+.card h3 {
+  color: var(--white);
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.card p {
+  font-size: 1.45rem;
+  line-height: 1.5;
+  color: #6f8299;
+}
+
+.tags {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  padding: 0.3rem 0.55rem;
+  border: 1px solid rgba(112, 166, 222, 0.28);
+  color: #637791;
+  text-transform: capitalize;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 2.4rem;
+  margin-top: 1rem;
+}
+
+.skill-row p {
+  margin-bottom: 0.35rem;
+  font-size: 1.15rem;
+  color: #70849b;
+}
+
+.skill-row .percent {
+  float: right;
+  color: var(--neon);
+}
+
+.skill-row .percent.pink {
+  color: var(--pink);
+}
+
+.skill-row .percent.purple {
+  color: var(--purple);
+}
+
+.bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(85, 105, 130, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.fill {
+  display: block;
+  height: 100%;
+  box-shadow: 0 0 10px currentColor;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 2rem;
+}
+
+.contact-copy {
+  font-size: 1.9rem;
+  line-height: 1.5;
+  color: #7b90a8;
+  margin-bottom: 1.7rem;
+}
+
+.links {
+  list-style: none;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.links li::before {
+  content: "❯";
+  color: var(--pink);
+  margin-right: 0.6rem;
+}
+
+.links a {
+  color: #6e839a;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+}
+
+.contact-form label {
+  display: block;
+  color: #6f8298;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.72rem;
+  margin-bottom: 0.45rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(112, 166, 222, 0.3);
+  background: rgba(6, 14, 29, 0.66);
+  color: #b6cae0;
+  font-family: "Consolas", monospace;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+footer {
+  padding: 1.3rem 2.2rem 2rem;
+  border-top: 1px solid rgba(0, 246, 255, 0.12);
+  font-size: 0.85rem;
+  color: #5c728a;
+}
+
+@media (max-width: 1050px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .about-layout,
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1,
+  h2 {
+    font-size: clamp(2.6rem, 11vw, 4.7rem);
+  }
+
+  .intro,
+  .copy,
+  .contact-copy {
+    font-size: 1.28rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+  }
+
+  nav a {
+    font-size: 0.62rem;
+  }
+
+  .stats {
+    gap: 1.2rem;
+  }
+}

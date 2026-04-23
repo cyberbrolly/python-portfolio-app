@@ -189,15 +189,15 @@
           </ul>
         </div>
 
-        <form class="contact-form">
+        <form class="contact-form" action="/contact" method="post">
           <label for="handle">Handle / Name</label>
-          <input id="handle" type="text" placeholder="your_handle" />
+          <input id="handle" name="handle" type="text" placeholder="your_handle" required />
 
           <label for="email">Email Address</label>
-          <input id="email" type="email" placeholder="you@domain.io" />
+          <input id="email" name="email" type="email" placeholder="you@domain.io" required />
 
           <label for="message">Message</label>
-          <textarea id="message" placeholder="// your message here..."></textarea>
+          <textarea id="message" name="message" placeholder="// your message here..." required></textarea>
 
           <button class="btn primary" type="submit">Send_Signal ↗</button>
         </form>

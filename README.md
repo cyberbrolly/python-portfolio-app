@@ -29,5 +29,6 @@ This repo includes `render.yaml` for one-click deployment.
 ## Contact form backend
 
 - Endpoint: `POST /contact`
+- Read messages: `GET /messages`
 - Spam protection: honeypot + IP rate limiting + submission cooldown
-- Storage: `contact_messages.csv` (created automatically)
+- Storage: `database.db` SQLite file (created automatically)
